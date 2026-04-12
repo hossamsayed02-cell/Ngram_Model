@@ -1,0 +1,15 @@
+#----Python Environment and Cache Files----
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.env 
+
+#--- VS Code Settings and Cache Files ---
+.vscode/
+
+#---Data and OS Generated Files---
+.DS_Store
+Thumbs.db
+data/
+*.json
