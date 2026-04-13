@@ -28,10 +28,10 @@ def main():
     load_dotenv("config/.env")
     
     # 1. Environment Variables
-    RAW_TRAIN_DIR = os.getenv("RAW_TRAIN_DIR")
-    PROCESSED_TRAIN_FILE = os.getenv("PROCESSED_TRAIN_FILE")
-    MODEL_PATH = os.getenv("MODEL_PATH")
-    VOCAB_PATH = os.getenv("VOCAB_PATH")
+    RAW_TRAIN_DIR = os.getenv("TRAIN_RAW_DIR")
+    PROCESSED_TRAIN_FILE = os.getenv("TRAIN_TOKENS")
+    MODEL_PATH = os.getenv("MODEL")
+    VOCAB_PATH = os.getenv("VOCAB")
     NGRAM_ORDER = int(os.getenv("NGRAM_ORDER", 4))
     UNK_THRESHOLD = int(os.getenv("UNK_THRESHOLD", 3))
     TOP_K = int(os.getenv("TOP_K", 3))
