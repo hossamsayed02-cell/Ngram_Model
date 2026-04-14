@@ -3,7 +3,7 @@ import string
 from pathlib import Path
 import nltk
 from nltk.tokenize import word_tokenize, sent_tokenize
-
+nltk.download('punkt')
 class Normalizer:
     """
     Handles text cleaning and tokenization for the Ngram project.
