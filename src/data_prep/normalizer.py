@@ -4,6 +4,7 @@ from pathlib import Path
 import nltk
 from nltk.tokenize import word_tokenize, sent_tokenize
 nltk.download('punkt')
+nltk.download('punkt_tab')
 class Normalizer:
     """
     Handles text cleaning and tokenization for the Ngram project.
