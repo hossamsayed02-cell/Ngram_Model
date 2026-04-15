@@ -71,19 +71,20 @@ class NGramModel:
 
     def save_model(self, model_path: str, vocab_path: str):
         """Saves vocab and model probabilities to JSON files."""
+        # This gets the directory part of your path and creates it if it's missing
+        Path(vocab_path).parent.mkdir(parents=True, exist_ok=True)
         with open(vocab_path, "w", encoding="utf-8") as f:
             json.dump(list(self.vocab), f, indent=4)
+        Path(model_path).parent.mkdir(parents=True, exist_ok=True) 
         with open(model_path, "w", encoding="utf-8") as f:
             json.dump(self.model_data, f, indent=4)
 
     def load_model(self, model_path: str, vocab_path: str):
         """Loads vocab and model probabilities from JSON files."""
-        # This gets the directory part of your path and creates it if it's missing
-        Path(vocab_path).parent.mkdir(parents=True, exist_ok=True)
         with open(vocab_path, "r", encoding="utf-8") as f:
             self.vocab = set(json.load(f))
             
-        Path(model_path).parent.mkdir(parents=True, exist_ok=True)    
+   
         with open(model_path, "r", encoding="utf-8") as f:
             self.model_data = json.load(f)
 
