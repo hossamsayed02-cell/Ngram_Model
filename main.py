@@ -73,7 +73,9 @@ def main():
                 clean_text = simple_cleaner(f.read())
                 tokens = normalizer.normalize(clean_text)
                 all_tokens.extend(tokens)
-        
+
+        # This gets the directory part of your path and creates it if it's missing
+        Path(PROCESSED_TRAIN_FILE).parent.mkdir(parents=True, exist_ok=True)
         with open(PROCESSED_TRAIN_FILE, "w", encoding="utf-8") as f:
             f.write(" ".join(all_tokens))
         print(f"Total tokens saved to {PROCESSED_TRAIN_FILE}")
